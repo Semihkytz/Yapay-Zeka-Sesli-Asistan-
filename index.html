@@ -9,53 +9,104 @@
             --ata-uni-blue: #1d3557;
             --accent-blue: #457b9d;
             --light-bg: #f1faee;
+            --text-dark: #2d3436;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--light-bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        .main-container {
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
             background: white;
-            width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 10px solid var(--ata-uni-blue);
             text-align: center;
-            border-top: 6px solid var(--ata-uni-blue);
         }
 
-        h1 { color: var(--ata-uni-blue); font-size: 1.4rem; }
-        p { color: #555; font-size: 0.95rem; margin-bottom: 25px; }
+        h1 { color: var(--ata-uni-blue); margin-bottom: 10px; font-size: 1.8rem; }
+        .subtitle { color: #636e72; margin-bottom: 30px; font-style: italic; }
 
-        .widget-box {
-            min-height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
         }
+
+        .info-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .info-item h3 { margin-top: 0; color: var(--ata-uni-blue); font-size: 1.1rem; }
+        .info-item p { margin-bottom: 0; font-size: 0.9rem; }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #b2bec3;
+        }
+
+        /* Widget'ın içeriği kapatmaması için alt kısma boşluk */
+        .widget-spacer { height: 120px; }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <h1>Uygulamalı Eğitimler Danışmanı</h1>
-        <p>Atatürk Üniversitesi yönergesine göre staj ve mesleki eğitim süreçlerini bana sorabilirsiniz.</p>
+    <div class="container">
+        <div class="card">
+            <h1>Atatürk Üniversitesi</h1>
+            <p class="subtitle">Uygulamalı Eğitimler Yönergesi Yapay Zeka Danışmanı</p>
+            
+            <p>Aşağıdaki konularda bilgi almak için sağ alttaki <strong>asistan butonuna</strong> tıklayarak sesli iletişim kurabilirsiniz:</p>
 
-        <div class="widget-box">
-            <elevenlabs-convai agent-id="agent_0301kcp8m3fzfaar6h9we01ff71r">
-                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-            </elevenlabs-convai>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>🕒 Devamsızlık Kuralları</h3>
+                    <p>Mazeretli izin süresi 15 iş gününü aşan öğrenciler başarısız sayılır[cite: 112, 113].</p>
+                </div>
+                <div class="info-item">
+                    <h3>📝 Haftalık Raporlar</h3>
+                    <p>Çalışma raporları her hafta bitiminde, sonraki haftanın ilk iş günü teslim edilmelidir[cite: 109].</p>
+                </div>
+                <div class="info-item">
+                    <h3>📅 Staj Süreleri</h3>
+                    <p>Stajlar 20 iş gününden az olamaz ve devam zorunluluğu bulunmaktadır[cite: 197, 198].</p>
+                </div>
+                <div class="info-item">
+                    <h3>💳 Ücret Hakları</h3>
+                    <p>İşletmede mesleki eğitim ve staj yapan öğrencilere 3308 sayılı Kanun uyarınca ücret ödenir[cite: 100, 129].</p>
+                </div>
+            </div>
+
+            <div class="widget-spacer"></div>
         </div>
+
+        <footer>
+            Bu asistan Atatürk Üniversitesi Uygulamalı Eğitimler Yönergesi (14.01.2022) verileriyle eğitilmiştir.
+        </footer>
     </div>
+
+    <elevenlabs-convai agent-id="agent_0301kcp8m3fzfaar6h9we01ff71r">
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </elevenlabs-convai>
 
 </body>
 </html>
