@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atatürk Üniversitesi Uygulamalı Eğitimler Asistanı</title>
+    <style>
+        :root {
+            --ata-uni-blue: #1d3557;
+            --accent-blue: #457b9d;
+            --light-bg: #f1faee;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 6px solid var(--ata-uni-blue);
+        }
+
+        h1 { color: var(--ata-uni-blue); font-size: 1.4rem; }
+        p { color: #555; font-size: 0.95rem; margin-bottom: 25px; }
+
+        .widget-box {
+            min-height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Uygulamalı Eğitimler Danışmanı</h1>
+        <p>Atatürk Üniversitesi yönergesine göre staj ve mesleki eğitim süreçlerini bana sorabilirsiniz.</p>
+
+        <div class="widget-box">
+            <elevenlabs-convai agent-id="agent_0301kcp8m3fzfaar6h9we01ff71r">
+                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+            </elevenlabs-convai>
+        </div>
+    </div>
+
+</body>
+</html>
